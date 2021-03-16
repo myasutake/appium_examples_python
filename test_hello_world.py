@@ -17,6 +17,28 @@ def test_android_emulator_chrome():
         'udid': config.emulator_udid,
         'chromedriverExecutableDir': config.chromedriver_executable_dir
     }
+
+    do_test(capabilities)
+    return
+
+
+def test_android_device_chrome():
+    # Launch an emulator before running this test.
+
+    capabilities = {
+        'browserName': 'Chrome',
+        'platformName': 'Android',
+        'udid': config.physical_udid,
+        'chromedriverExecutableDir': config.chromedriver_executable_dir,
+    }
+
+    do_test(capabilities)
+    return
+
+
+def do_test(capabilities):
+    # Connect the device before running this test. Obv.
+
     driver = webdriver.Remote(command_executor='http://127.0.0.1:4723/wd/hub', desired_capabilities=capabilities)
 
     driver.get('https://amazon.com')
