@@ -14,7 +14,7 @@ def test_android_emulator_chrome():
     capabilities = {
         'browserName': 'Chrome',
         'platformName': 'Android',
-        'udid': config.emulator_udid,
+        'udid': config.android_emulator_udid,
         'chromedriverExecutableDir': config.chromedriver_executable_dir
     }
 
@@ -28,7 +28,7 @@ def test_android_device_chrome():
     capabilities = {
         'browserName': 'Chrome',
         'platformName': 'Android',
-        'udid': config.physical_udid,
+        'udid': config.android_physical_udid,
         'chromedriverExecutableDir': config.chromedriver_executable_dir,
     }
 
