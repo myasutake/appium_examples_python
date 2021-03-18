@@ -36,6 +36,21 @@ def test_android_device_chrome():
     return
 
 
+def test_ios_emulator_safari():
+    # Launch an emulator before running this test.
+
+    capabilities = {
+        'automationName': 'XCUITest',
+        'browserName': 'Safari',
+        'platformName': 'iOS',
+        'udid': config.ios_simulator_udid,
+        'deviceName': 'asdf',
+    }
+
+    do_test(capabilities)
+    return
+
+
 def do_test(capabilities):
     # Connect the device before running this test. Obv.
 
